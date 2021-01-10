@@ -10,6 +10,9 @@ export default {
   watch: {
     chartData() {
       this.renderChart(this.chartData, this.options);
+    },
+    options() {
+      this.renderChart(this.chartData, this.options);
     }
   }
 };

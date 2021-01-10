@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-main>
-      <AoC />
+      <div v-if="aoc_data">
+        <AoC :aoc_data="aoc_data" />
+      </div>
     </v-main>
   </v-app>
 </template>
@@ -15,9 +17,15 @@ export default {
   components: {
     AoC
   },
+  async created() {
+    this.aoc_data = await fetch(`195249.json`)
+      .then(response => response.json())
+      .then(data => data);
+    console.log(this.aoc_data);
+  },
 
   data: () => ({
-    //
+    aoc_data: null
   })
 };
 </script>

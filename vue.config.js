@@ -1,14 +1,5 @@
 module.exports = {
-  "devServer": {
-    "proxy": {
-      "/api": {
-        "target": "https://adventofcode.com",
-        "pathRewrite": {
-          "^/api": ""
-        }
-      }
-    }
-  },
+  publicPath: '',
   "transpileDependencies": [
     "vuetify"
   ]
